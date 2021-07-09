@@ -1,32 +1,19 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+    <h1>Bienvenida a tus operaciones</h1>
+    <div class="card">
+      <h3>Actividades de hoy</h3>
+      <p>
+        La meditación y la relajación son importantes
+      </p>
+    </div>
+
+    <div class="container">
+      <h3>Ingresos Acumulados</h3>
+      <p>$5000</p>
+      <img src="../assets/dinero.jpg" alt="">
+    </div>
+    <button class="button" @click="alert()">retirar</button>
   </div>
 </template>
 
@@ -35,6 +22,11 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  methods: {
+    alert: function() {
+      alert('debes tener por lo menos 50mil pesos para poder retirar');
+    }
   }
 }
 </script>
@@ -54,5 +46,36 @@ li {
 }
 a {
   color: #42b983;
+}
+
+.card {
+  margin: 0 1rem;
+  padding: 1rem;
+  height: 4.5rem;
+  border-radius: .5rem;
+  background-color: white;
+  color: gold;
+}
+
+.card h3 {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.card p {
+  color: black;
+  text-align: left;
+  margin-bottom: .5rem;
+}
+
+.container img {
+  width: 15rem;
+  border-radius: .5rem;
+}
+
+.button {
+  width: 5rem;
+  height: 1.5rem;
 }
 </style>
